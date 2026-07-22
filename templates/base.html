@@ -1,0 +1,19 @@
+{% load static %}<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>{% block title %}PHINOX{% endblock %}</title>
+{% block fonts %}{% endblock %}
+{% block tailwind %}{% endblock %}
+<link rel="stylesheet" href="{% static 'css/tokens.css' %}"/>
+{% block extra_head %}{% endblock %}
+<style>
+  body { min-height: max(884px, 100dvh); }
+</style>
+</head>
+<body class="{% block body_class %}bg-background text-on-background{% endblock %}">
+{% block body %}{% endblock %}
+{% block extra_scripts %}{% endblock %}
+</body>
+</html>

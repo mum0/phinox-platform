@@ -1,0 +1,15 @@
+{
+  "name": "phinox-frontend-build",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Tailwind CLI build pipeline for PHINOX. Replaces the Stitch export's CDN <script> tag (dev-only, unsuitable for production) once Phase 3 templating begins. Not yet wired into any template — current templates still use the CDN script for pixel-fidelity with the Stitch source during Phase 1.",
+  "scripts": {
+    "build:css": "tailwindcss -i ./static/css/input.css -o ./static/css/dist.css --minify",
+    "watch:css": "tailwindcss -i ./static/css/input.css -o ./static/css/dist.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/container-queries": "^0.1.1"
+  }
+}

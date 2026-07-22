@@ -1,0 +1,30 @@
+{% comment %}
+Bottom Nav Dock — 5-item fixed footer (HOME/SHOP/SEARCH/WISHLIST/ACCOUNT).
+Seen on: 404, Contact. Absent on Checkout (uses Sticky Action Dock instead).
+Pass `active_tab` (one of home/shop/search/wishlist/account) from the view
+context to highlight the current tab, matching the ACCOUNT-active pattern
+observed on the Contact page. Defaults to no active tab.
+[SOURCE: code.html]
+{% endcomment %}
+<nav class="fixed bottom-0 left-0 w-full h-touch-target-min flex justify-around items-center bg-surface-container-highest px-margin-mobile pb-safe border-t border-outline-variant z-50">
+  <div class="flex flex-col items-center justify-center pt-1 active:scale-95 transition-transform duration-75 {% if active_tab == 'home' %}text-tertiary border-t-2 border-tertiary{% else %}text-on-surface-variant{% endif %}">
+    <span class="material-symbols-outlined">home</span>
+    <span class="font-label-technical text-label-xs mt-1">HOME</span>
+  </div>
+  <div class="flex flex-col items-center justify-center pt-1 active:scale-95 transition-transform duration-75 {% if active_tab == 'shop' %}text-tertiary border-t-2 border-tertiary{% else %}text-on-surface-variant{% endif %}">
+    <span class="material-symbols-outlined">grid_view</span>
+    <span class="font-label-technical text-label-xs mt-1">SHOP</span>
+  </div>
+  <div class="flex flex-col items-center justify-center pt-1 active:scale-95 transition-transform duration-75 {% if active_tab == 'search' %}text-tertiary border-t-2 border-tertiary{% else %}text-on-surface-variant{% endif %}">
+    <span class="material-symbols-outlined">search</span>
+    <span class="font-label-technical text-label-xs mt-1">SEARCH</span>
+  </div>
+  <div class="flex flex-col items-center justify-center pt-1 active:scale-95 transition-transform duration-75 {% if active_tab == 'wishlist' %}text-tertiary border-t-2 border-tertiary{% else %}text-on-surface-variant{% endif %}">
+    <span class="material-symbols-outlined">favorite</span>
+    <span class="font-label-technical text-label-xs mt-1">WISHLIST</span>
+  </div>
+  <div class="flex flex-col items-center justify-center pt-1 active:scale-95 transition-transform duration-75 {% if active_tab == 'account' %}text-tertiary border-t-2 border-tertiary{% else %}text-on-surface-variant{% endif %}">
+    <span class="material-symbols-outlined">person</span>
+    <span class="font-label-technical text-label-xs mt-1">ACCOUNT</span>
+  </div>
+</nav>
